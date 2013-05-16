@@ -8,6 +8,7 @@ import model.measurements.Measurement;
 
 public class Recipe {
 	
+	
 	private String name;
 	private ArrayList<Ingredient> ingredients;
 	private Measurement yields;
