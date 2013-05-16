@@ -1,0 +1,23 @@
+Recipe
+
+<Recipe>
+  <Name>Test Recipe</Name>
+  <Ingredient><Name>sugar</Name>
+    <Measurement>
+      <Type>Volume</Type>
+      <Amount>96</Amount>
+    </Measurement>
+  </Ingredient>
+  <Ingredient><Name>flour</Name>
+    <Measurement>
+      <Type>Volume</Type>
+      <Amount>144</Amount>
+    </Measurement>
+    <Instructions>sifted</Instructions>
+  </Ingredient>
+  <Yields><Type>Volume</Type><Amount>240</Amount></Yields>
+  <Servings>24</Servings>
+  <Directions>
+  1. Mix flour and sugar
+  2. Bake @350° for 10 minutes
+  </Directions>
