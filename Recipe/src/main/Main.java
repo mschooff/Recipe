@@ -1,7 +1,7 @@
 package main;
 
 import java.awt.EventQueue;
-import view.html.MainWindow;
+import view.MainWindow;
 
 public class Main {
 

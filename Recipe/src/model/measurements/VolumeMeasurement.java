@@ -3,12 +3,12 @@ package model.measurements;
 public class VolumeMeasurement extends Measurement {
 
 	public VolumeMeasurement(double amount) {
-		super(amount);
+		super(amount, MeasurementType.VOLUME);
 	}
 	
 	public VolumeMeasurement(double amount, VolumeUnits unit)
 	{
-		super(amount * unit.toTeaspoons());
+		super(amount * unit.toTeaspoons(), MeasurementType.VOLUME);
 	}
 	
 	public double getAmount(VolumeUnits unit)
