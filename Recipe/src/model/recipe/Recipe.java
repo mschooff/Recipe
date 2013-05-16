@@ -8,19 +8,24 @@ import model.measurements.Measurement;
 
 public class Recipe {
 	
+	private String name;
 	private ArrayList<Ingredient> ingredients;
 	private Measurement yields;
 	private int servings;
+	String directions;
 	
-	public Recipe(Measurement yields, int servings)
+	public Recipe(String name, Measurement yields, int servings, String directions)
 	{
+		this.name = name;
 		ingredients = new ArrayList<Ingredient>();
 		this.yields = yields;
 		this.servings = servings;
+		this.directions = directions;
 	}
 	
-	public Recipe(List<Ingredient> ingredients, Measurement yields, int servings)
+	public Recipe(String name, List<Ingredient> ingredients, Measurement yields, int servings, String directions)
 	{
+		this.name = name;
 		this.ingredients = new ArrayList<Ingredient>();
 		for(Ingredient i: ingredients)
 		{
@@ -28,6 +33,7 @@ public class Recipe {
 		}
 		this.yields = yields;
 		this.servings = servings;
+		this.directions = directions;
 	}
 	
 	public NutritionInfo getNutrition()
@@ -75,6 +81,11 @@ public class Recipe {
 	public Measurement getYield()
 	{
 		return yields;
+	}
+	
+	public String getName()
+	{
+		return name;
 	}
 
 }
