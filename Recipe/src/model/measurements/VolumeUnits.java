@@ -1,10 +1,10 @@
 package model.measurements;
 
-public enum VolumeUnits {
+public enum VolumeUnits implements Units{
 	CUP, DASH, DROP, GALLON, LITER, MILLILITER, OUNCE, 
 	PINCH, PINT, QUART, TABLESPOON, TEASPOON;
 
-public double toTeaspoons()
+public double conversion()
 {
 	switch(this) {
 	case CUP: return 48;
@@ -21,6 +21,44 @@ public double toTeaspoons()
 	case TEASPOON: return 1;
 	default: return -1;
 	}
+}
+
+public String toString()
+{
+	switch(this) {
+	case CUP: return "Cup";
+	case DASH: return "Dash";
+	case DROP: return "Drop";
+	case GALLON: return "Gallon";
+	case LITER: return "Liter";
+	case MILLILITER: return "milliliter";
+	case OUNCE: return "Ounce";
+	case PINCH: return "Pinch";
+	case PINT: return "Pint";
+	case QUART: return "Quart";
+	case TABLESPOON: return "Tablespoon";
+	case TEASPOON: return "teaspoon";
+	}
+	return null;
+}
+
+@Override
+public String abbreviation() {
+	switch(this) {
+	case CUP: return "c";
+	case DASH: return "dash";
+	case DROP: return "drop";
+	case GALLON: return "Gal";
+	case LITER: return "L";
+	case MILLILITER: return "ml";
+	case OUNCE: return "Oz";
+	case PINCH: return "pinch";
+	case PINT: return "Pt";
+	case QUART: return "Qt";
+	case TABLESPOON: return "Tbsp";
+	case TEASPOON: return "tsp";
+}
+	return null;
 }
 
 };

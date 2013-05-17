@@ -55,5 +55,17 @@ public class Ingredient {
 		double protein = getNutrition().getProtein() * getServingtoAmountConversion();
 		return new NutritionInfo(amount, calories, totalFat, totalCarbs, fiber, sugar, protein);
 	}
+	
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append(amount.toString() + " ");
+		sb.append(info.getName());
+		if (instructions.length() > 0)
+		{
+			sb.append(" ," + instructions);
+		}
+		return sb.toString();
+	}
 
 }
