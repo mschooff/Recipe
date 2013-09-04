@@ -1,5 +1,7 @@
 package model.measurements;
 
-public enum MeasurementType {
+import java.io.Serializable;
+
+public enum MeasurementType implements Serializable{
 	VOLUME
 }

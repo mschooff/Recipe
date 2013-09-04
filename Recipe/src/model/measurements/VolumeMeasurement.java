@@ -2,12 +2,14 @@ package model.measurements;
 
 public class VolumeMeasurement extends Measurement {
 
-	
+	private static final long serialVersionUID = -3238874991039752117L;
+
+
 	public VolumeMeasurement(double amount, VolumeUnits unit)
 	{
 		super(amount * unit.conversion(), MeasurementType.VOLUME, unit);
 	}
-	
+
 	
 	@Override
 	public String toString()
@@ -16,10 +18,6 @@ public class VolumeMeasurement extends Measurement {
 		sb.append(this.getPreferredAmount());
 		sb.append(" ");
 		sb.append(this.getPreferredUnit());
-		if (this.getPreferredAmount() > 1)
-		{
-			sb.append("s");
-		}
 		return sb.toString();
 	}
 	

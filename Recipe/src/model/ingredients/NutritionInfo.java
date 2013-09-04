@@ -1,9 +1,13 @@
 package model.ingredients;
 
+import java.io.Serializable;
+
 import model.measurements.Measurement;
 
-public class NutritionInfo {
+public class NutritionInfo implements Serializable{
 	
+	private static final long serialVersionUID = 7667522632826437957L;
+
 	private Measurement servingSize;
 	
 	private double calories;

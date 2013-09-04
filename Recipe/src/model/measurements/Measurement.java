@@ -1,7 +1,12 @@
 package model.measurements;
 
-public class Measurement {
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.MathContext;
+
+public class Measurement implements Serializable {
 	
+	private static final long serialVersionUID = -4082111688120076980L;
 	private double amount;
 	private MeasurementType type;
 	private Units preferredUnit;
@@ -18,6 +23,14 @@ public class Measurement {
 		amount = m.getAmount();
 		type = m.getType();
 		preferredUnit = m.getPreferredUnit();
+	}
+	
+	public Units[] getUnits()
+	{
+		switch(type) {
+		case VOLUME: return VolumeUnits.values();
+		default: return null;
+		}
 	}
 	
 	public double getAmount(Units unit)
@@ -58,5 +71,12 @@ public class Measurement {
 		this.type = type;
 	}
 
+	public static String round(double value, int decimals)
+	{
+		int temp = (int)((value * Math.pow(10, decimals)));
+		double result = temp / Math.pow(10, decimals);
+		BigDecimal rounded = new BigDecimal(result).round(new MathContext(decimals));
+		return String.valueOf(rounded.doubleValue());
+	}
 
 }

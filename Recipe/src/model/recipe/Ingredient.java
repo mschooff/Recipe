@@ -1,10 +1,13 @@
 package model.recipe;
 
+import java.io.Serializable;
+
 import model.ingredients.*;
 import model.measurements.Measurement;
 
-public class Ingredient {
+public class Ingredient implements Serializable{
 	
+	private static final long serialVersionUID = -3351801739408375050L;
 	private IngredientInfo info;
 	private Measurement amount;
 	private String instructions;
@@ -54,6 +57,17 @@ public class Ingredient {
 		double sugar = getNutrition().getSugar() * getServingtoAmountConversion();
 		double protein = getNutrition().getProtein() * getServingtoAmountConversion();
 		return new NutritionInfo(amount, calories, totalFat, totalCarbs, fiber, sugar, protein);
+	}
+	
+	public String getNameAndInstructions()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append(info.getName());
+		if (instructions.length() > 0)
+		{
+			sb.append(" ," + instructions);
+		}
+		return sb.toString();
 	}
 	
 	public String toString()

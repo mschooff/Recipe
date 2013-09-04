@@ -1,6 +1,8 @@
 package model.measurements;
 
-public enum VolumeUnits implements Units{
+import java.io.Serializable;
+
+public enum VolumeUnits implements Units, Serializable {
 	CUP, DASH, DROP, GALLON, LITER, MILLILITER, OUNCE, 
 	PINCH, PINT, QUART, TABLESPOON, TEASPOON;
 
@@ -26,18 +28,18 @@ public double conversion()
 public String toString()
 {
 	switch(this) {
-	case CUP: return "Cup";
-	case DASH: return "Dash";
-	case DROP: return "Drop";
-	case GALLON: return "Gallon";
-	case LITER: return "Liter";
-	case MILLILITER: return "milliliter";
-	case OUNCE: return "Ounce";
-	case PINCH: return "Pinch";
-	case PINT: return "Pint";
-	case QUART: return "Quart";
-	case TABLESPOON: return "Tablespoon";
-	case TEASPOON: return "teaspoon";
+	case CUP: return "Cups";
+	case DASH: return "Dashes";
+	case DROP: return "Drops";
+	case GALLON: return "Gallons";
+	case LITER: return "Liters";
+	case MILLILITER: return "milliliters";
+	case OUNCE: return "Ounces";
+	case PINCH: return "Pinches";
+	case PINT: return "Pints";
+	case QUART: return "Quarts";
+	case TABLESPOON: return "Tablespoons";
+	case TEASPOON: return "teaspoons";
 	}
 	return null;
 }
@@ -57,8 +59,10 @@ public String abbreviation() {
 	case QUART: return "Qt";
 	case TABLESPOON: return "Tbsp";
 	case TEASPOON: return "tsp";
+	default: return "";
+	}
 }
-	return null;
+	
 }
 
-};
+
