@@ -56,6 +56,11 @@ public class IngredientInfo implements Serializable{
 		this.typeOfMeasurement = m;
 	}
 	
+	public static IngredientInfo[] getIngredients()
+	{
+		return ingredients.values().toArray(new IngredientInfo[ingredients.size()]);
+	}
+	
 	public static void addIngredient(IngredientInfo i)
 	{
 		ingredients.put(i.getName(), i);

@@ -2,7 +2,7 @@ package model.measurements;
 
 import java.io.Serializable;
 
-public enum VolumeUnits implements Units, Serializable {
+public enum VolumeUnits implements Units, Serializable{
 	CUP, DASH, DROP, GALLON, LITER, MILLILITER, OUNCE, 
 	PINCH, PINT, QUART, TABLESPOON, TEASPOON;
 

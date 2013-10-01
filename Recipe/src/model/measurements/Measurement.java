@@ -11,6 +11,16 @@ public class Measurement implements Serializable {
 	private MeasurementType type;
 	private Units preferredUnit;
 	
+	public static Measurement create(double amount, Units preferred)
+	{
+		MeasurementType type = MeasurementType.getTypeForUnit(preferred);
+		switch (type)
+		{
+		case VOLUME: return new VolumeMeasurement(amount, (VolumeUnits) preferred);
+		default: return null;
+		}
+	}
+	
 	public Measurement(double amount, MeasurementType type, Units preferred)
 	{
 		this.amount = amount;

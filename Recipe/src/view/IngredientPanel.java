@@ -56,6 +56,11 @@ public class IngredientPanel extends JPanel {
 		return (Units) unit.getSelectedItem();
 	}
 	
+	public Ingredient getIngredient()
+	{
+		return ingredient;
+	}
+	
 	
 
 }
